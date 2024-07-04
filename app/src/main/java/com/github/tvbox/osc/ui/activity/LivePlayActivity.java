@@ -801,9 +801,11 @@ public class LivePlayActivity extends BaseActivity {
             HashMap<String, String> headers = new HashMap<>();
 
             if(url_ua_referer[1].contains("@@")){
+                Toast.makeText(App.getInstance(), "有@@", Toast.LENGTH_SHORT).show();
+            
                 String[] ua_referer = url_ua_referer[1].split("@@");
                 for (int i = 0; i < ua_referer.length; i++) {
-                    if(ua_referer[i].contains("user-agent") || ua_referer[i].contains("referer")){
+                    if(ua_referer[i].contains("User-Agent") || ua_referer[i].contains("Referer")){
                         String[] key_value = ua_referer[i].split("=");
                         //headers.put("User-Agent", " " + ua);
                         //headers.put("Referer", " " + referer);
