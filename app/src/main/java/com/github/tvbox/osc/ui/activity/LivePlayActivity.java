@@ -826,13 +826,15 @@ public class LivePlayActivity extends BaseActivity {
 
     private void playNext() {
         if (!isCurrentLiveChannelValid()) return;
-        Integer[] groupChannelIndex = getNextChannel(1);
+        //Integer[] groupChannelIndex = getNextChannel(1);
+        Integer[] groupChannelIndex = getNextChannel(Hawk.get(HawkConfig.LIVE_CHANNEL_REVERSE, false) ? -1 : 1);
         playChannel(groupChannelIndex[0], groupChannelIndex[1], false);
     }
 
     private void playPrevious() {
         if (!isCurrentLiveChannelValid()) return;
-        Integer[] groupChannelIndex = getNextChannel(-1);
+        //Integer[] groupChannelIndex = getNextChannel(-1);
+        Integer[] groupChannelIndex = getNextChannel(Hawk.get(HawkConfig.LIVE_CHANNEL_REVERSE, false) ? 1 : -1);
         playChannel(groupChannelIndex[0], groupChannelIndex[1], false);
     }
 
