@@ -794,7 +794,7 @@ public class LivePlayActivity extends BaseActivity {
         //添加ua referer支持
         String thisurl = currentLiveChannelItem.getUrl();
         if(thisurl.contains("@@@")){
-            Toast.makeText(App.getInstance(), "有@@@", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(App.getInstance(), "有@@@", Toast.LENGTH_SHORT).show();
             
             String[] url_ua_referer = thisurl.split("@@@");
             thisurl = url_ua_referer[0];
