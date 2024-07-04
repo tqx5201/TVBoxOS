@@ -808,7 +808,7 @@ public class LivePlayActivity extends BaseActivity {
                         //headers.put("User-Agent", " " + ua);
                         //headers.put("Referer", " " + referer);
                         headers.put(key_value[0], " " + key_value[1]);
-                        Toast.makeText(App.getInstance(), "" + key.value[0], Toast.LENGTH_SHORT).show();
+                        Toast.makeText(App.getInstance(), "" + key_value[0], Toast.LENGTH_SHORT).show();
             
                     }
                 }
