@@ -818,6 +818,9 @@ public class LivePlayActivity extends BaseActivity {
             
                     }
                 }
+            }else{
+                Toast.makeText(App.getInstance(), "没有@@", Toast.LENGTH_SHORT).show();
+            
             }
             mVideoView.setUrl(thisurl, headers);
         }else{
