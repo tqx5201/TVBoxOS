@@ -798,6 +798,9 @@ public class LivePlayActivity extends BaseActivity {
             
             String[] url_ua_referer = thisurl.split("@@@");
             thisurl = url_ua_referer[0];
+            Toast.makeText(App.getInstance(), " " + url_ua_referer[1], Toast.LENGTH_SHORT).show();
+            
+            
             HashMap<String, String> headers = new HashMap<>();
 
             if(url_ua_referer[1].contains("@@")){
