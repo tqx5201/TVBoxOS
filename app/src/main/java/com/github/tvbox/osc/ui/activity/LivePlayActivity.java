@@ -798,15 +798,16 @@ public class LivePlayActivity extends BaseActivity {
             
             String[] url_ua_referer = thisurl.split("@@@");
             thisurl = url_ua_referer[0];
-            Toast.makeText(App.getInstance(), " " + url_ua_referer[1], Toast.LENGTH_SHORT).show();
+            String ua_referers = url_ua_referer[1];
+            //Toast.makeText(App.getInstance(), " " + url_ua_referer[1], Toast.LENGTH_SHORT).show();
             
             
             HashMap<String, String> headers = new HashMap<>();
 
-            if(url_ua_referer[1].contains("@@")){
+            if(ua_referers.contains("@@")){
                 Toast.makeText(App.getInstance(), "有@@", Toast.LENGTH_SHORT).show();
             
-                String[] ua_referer = url_ua_referer[1].split("@@");
+                String[] ua_referer = ua_referers.split("@@");
                 for (int i = 0; i < ua_referer.length; i++) {
                     if(ua_referer[i].contains("User-Agent") || ua_referer[i].contains("Referer")){
                         String[] key_value = ua_referer[i].split("=");
