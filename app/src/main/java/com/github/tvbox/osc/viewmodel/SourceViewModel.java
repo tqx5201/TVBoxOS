@@ -1,7 +1,6 @@
 package com.github.tvbox.osc.viewmodel;
 
 import android.text.TextUtils;
-
 import android.util.Base64;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
