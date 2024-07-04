@@ -89,7 +89,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
-
+import java.util.HashMap;
 import xyz.doikki.videoplayer.player.VideoView;
 
 /**
@@ -795,7 +795,7 @@ public class LivePlayActivity extends BaseActivity {
         String thisurl = currentLiveChannelItem.getUrl();
         if(thisurl.contains("@@@")){
             String[] url_ua_referer = thisurl.split("@@@");
-            thisurl = url_ua__referer[0];
+            thisurl = url_ua_referer[0];
             HashMap<String, String> headers = new HashMap<>();
 
             if(url_ua_referer[1].contains("@@")){
