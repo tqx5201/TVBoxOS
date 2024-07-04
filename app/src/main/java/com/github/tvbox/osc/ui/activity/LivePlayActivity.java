@@ -800,27 +800,17 @@ public class LivePlayActivity extends BaseActivity {
             thisurl = url_ua_referer[0];
             String ua_referers = url_ua_referer[1];
             //Toast.makeText(App.getInstance(), " " + url_ua_referer[1], Toast.LENGTH_SHORT).show();
-            
-            
             HashMap<String, String> headers = new HashMap<>();
-
-            if(ua_referers.contains("@@")){
-                Toast.makeText(App.getInstance(), "有@@", Toast.LENGTH_SHORT).show();
             
-                String[] ua_referer = ua_referers.split("@@");
-                for (int i = 0; i < ua_referer.length; i++) {
-                    if(ua_referer[i].contains("User-Agent") || ua_referer[i].contains("Referer")){
-                        String[] key_value = ua_referer[i].split("=");
-                        //headers.put("User-Agent", " " + ua);
-                        //headers.put("Referer", " " + referer);
-                        headers.put(key_value[0], " " + key_value[1]);
-                        Toast.makeText(App.getInstance(), "" + key_value[0], Toast.LENGTH_SHORT).show();
-            
-                    }
+            String[] ua_referer = url_ua_referer[1].split("@@");
+            for (int i = 0; i < ua_referer.length; i++) {
+                if(ua_referer[i].contains("User-Agent") || ua_referer[i].contains("Referer")){
+                    String[] key_value = ua_referer[i].split("=");
+                    //headers.put("User-Agent", " " + ua);
+                    //headers.put("Referer", " " + referer);
+                    headers.put(key_value[0], " " + key_value[1]);
+                    //Toast.makeText(App.getInstance(), "" + key_value[0], Toast.LENGTH_SHORT).show();
                 }
-            }else{
-                Toast.makeText(App.getInstance(), "没有@@", Toast.LENGTH_SHORT).show();
-            
             }
             mVideoView.setUrl(thisurl, headers);
         }else{
