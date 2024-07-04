@@ -791,12 +791,12 @@ public class LivePlayActivity extends BaseActivity {
         backcontroller.setVisibility(View.GONE);
         ll_right_top_huikan.setVisibility(View.GONE);
         
-                //添加ua referer支持
+        //添加ua referer支持
         String thisurl = currentLiveChannelItem.getUrl();
         if(thisurl.contains("@@@")){
             String[] url_ua_referer = thisurl.split("@@@");
             thisurl = url_ua__referer[0];
-            headers = new HashMap<>();
+            HashMap<String, String> headers = new HashMap<>();
 
             if(url_ua_referer[1].contains("@@")){
                 String[] ua_referer = url_ua_referer[1].split("@@");
