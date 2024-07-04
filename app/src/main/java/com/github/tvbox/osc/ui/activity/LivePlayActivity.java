@@ -794,6 +794,8 @@ public class LivePlayActivity extends BaseActivity {
         //添加ua referer支持
         String thisurl = currentLiveChannelItem.getUrl();
         if(thisurl.contains("@@@")){
+            Toast.makeText(App.getInstance(), "有@@@", Toast.LENGTH_SHORT).show();
+            
             String[] url_ua_referer = thisurl.split("@@@");
             thisurl = url_ua_referer[0];
             HashMap<String, String> headers = new HashMap<>();
@@ -801,11 +803,13 @@ public class LivePlayActivity extends BaseActivity {
             if(url_ua_referer[1].contains("@@")){
                 String[] ua_referer = url_ua_referer[1].split("@@");
                 for (int i = 0; i < ua_referer.length; i++) {
-                    if(ua_referer[i].contains("User-Agent") || ua_referer[i].contains("Referer")){
-                    String[] key_value = ua_referer[i].split("=");
-                    //headers.put("User-Agent", " " + ua);
-                    //headers.put("Referer", " " + referer);
-                    headers.put(key_value[0], " " + key_value[1]);
+                    if(ua_referer[i].contains("user-agent") || ua_referer[i].contains("referer")){
+                        String[] key_value = ua_referer[i].split("=");
+                        //headers.put("User-Agent", " " + ua);
+                        //headers.put("Referer", " " + referer);
+                        headers.put(key_value[0], " " + key_value[1]);
+                        Toast.makeText(App.getInstance(), "" + key.value[0], Toast.LENGTH_SHORT).show();
+            
                     }
                 }
             }
