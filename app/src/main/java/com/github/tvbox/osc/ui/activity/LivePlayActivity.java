@@ -804,13 +804,13 @@ public class LivePlayActivity extends BaseActivity {
             
             String[] ua_referer = url_ua_referer[1].split("@@");
             for (int i = 0; i < ua_referer.length; i++) {
-                if(ua_referer[i].contains("User-Agent") || ua_referer[i].contains("Referer")){
+                //if(ua_referer[i].contains("User-Agent") || ua_referer[i].contains("Referer")){
                     String[] key_value = ua_referer[i].split("=");
                     //headers.put("User-Agent", " " + ua);
                     //headers.put("Referer", " " + referer);
                     headers.put(key_value[0], " " + key_value[1]);
                     //Toast.makeText(App.getInstance(), "" + key_value[0], Toast.LENGTH_SHORT).show();
-                }
+                //}
             }
             mVideoView.setUrl(thisurl, headers);
         }else{
